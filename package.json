@@ -9,5 +9,8 @@
 		"@biomejs/biome": "2.2.5",
 		"@types/node": "^24.7.0",
 		"typescript": "^5.9.3"
+	},
+	"dependencies": {
+		"zod": "^4.1.12"
 	}
 }
