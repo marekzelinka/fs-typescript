@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const HelloSchema = z.object({
+export const UserSchema = z.object({
 	name: z
 		.string({ error: "Name must be a string" })
 		.nonempty("Name can't be empty"),
@@ -11,9 +11,9 @@ export const HelloSchema = z.object({
 
 if (import.meta.main) {
 	try {
-		HelloSchema.parse({ name: "Ada", age: 36 });
-		HelloSchema.parse({ name: "Charles" });
-		HelloSchema.parse({ name: "Boddy Tables", age: -1 });
+		UserSchema.parse({ name: "Ada", age: 36 });
+		UserSchema.parse({ name: "Charles" });
+		UserSchema.parse({ name: "Boddy Tables", age: -1 });
 		console.log("Passed!");
 	} catch (error) {
 		console.error("Failed with errors:");

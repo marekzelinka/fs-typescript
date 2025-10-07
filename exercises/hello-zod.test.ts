@@ -1,17 +1,17 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { HelloSchema } from "./hello-zod.ts";
+import { UserSchema } from "./hello-zod.ts";
 
-describe("Schema data parsing", () => {
+describe("UserSchema", () => {
 	it("should pass with valid data", () => {
-		assert.doesNotThrow(() => HelloSchema.parse({ name: "Ada", age: 36 }));
+		assert.doesNotThrow(() => UserSchema.parse({ name: "Ada", age: 36 }));
 	});
 
 	it("should fail when age is missing", () => {
-		assert.throws(() => HelloSchema.parse({ name: "Charles" }));
+		assert.throws(() => UserSchema.parse({ name: "Charles" }));
 	});
 
 	it("should fail when age is negative (< 0)", () => {
-		assert.throws(() => HelloSchema.parse({ name: "Boddy Tables", age: -1 }));
+		assert.throws(() => UserSchema.parse({ name: "Boddy Tables", age: -1 }));
 	});
 });
