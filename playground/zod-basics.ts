@@ -8,7 +8,7 @@ export const UserSchema = z.object({
 	name: z.string().trim().nonempty("Name can't be empty"),
 	email: z.email("Invalid email format"),
 	age: z
-		.int()
+		.number()
 		.positive("Age must be greater than 0")
 		.max(120, "Age must be less than 120"),
 });
