@@ -38,7 +38,6 @@ if (import.meta.main) {
 		GetMessageReturnSchema.parse(["mzelinka", 1]);
 		UserSchema.parse({
 			id: "abe90c5a-d454-42e0-8764-2bc10e4f0f64",
-
 			permissions: ["all:products", "all:customers"],
 		});
 	} catch (error) {
