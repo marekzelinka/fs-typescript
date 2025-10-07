@@ -10,3 +10,5 @@ export const UserSchema = z.object({
 		.optional()
 		.transform((arg) => arg ?? 0),
 });
+
+export type User = z.infer<typeof UserSchema>;

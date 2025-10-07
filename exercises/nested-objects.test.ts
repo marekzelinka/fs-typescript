@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { UserProfileSchema } from "./street-address.ts";
+import { UserProfileSchema } from "./nested-objects.ts";
 
 describe("UserProfileSchema", () => {
 	it("should pass with one address", () => {

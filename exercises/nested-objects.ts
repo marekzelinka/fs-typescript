@@ -14,6 +14,8 @@ export const AddressSchema = z.object({
 		.length(5, { error: "Zip code must be exactly 5 characters" }),
 });
 
+export type Address = z.infer<typeof AddressSchema>;
+
 export const UserProfileSchema = z.object({
 	name: z
 		.string({ error: "Name must be a string" })
@@ -23,3 +25,5 @@ export const UserProfileSchema = z.object({
 		.array(AddressSchema)
 		.nonempty({ error: "At least one address is required" }),
 });
+
+export type UserProfile = z.infer<typeof UserProfileSchema>;

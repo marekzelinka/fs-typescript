@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { UserSchema } from "./hello-zod.ts";
+import { UserSchema } from "./schemas.ts";
 
 describe("UserSchema", () => {
 	it("should pass with valid data", () => {

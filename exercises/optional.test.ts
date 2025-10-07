@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { UserSchema } from "./options.ts";
+import { UserSchema } from "./optional.ts";
 
 describe("UserSchema", () => {
 	it("should pass with age default to 0", () => {

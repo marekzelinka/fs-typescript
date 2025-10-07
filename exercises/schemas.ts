@@ -9,6 +9,8 @@ export const UserSchema = z.object({
 		.positive({ error: "Age must be greater than 0" }),
 });
 
+export type User = z.infer<typeof UserSchema>;
+
 if (import.meta.main) {
 	try {
 		UserSchema.parse({ name: "Ada", age: 36 });
