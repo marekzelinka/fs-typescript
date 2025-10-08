@@ -7,11 +7,13 @@
 	"packageManager": "pnpm@10.18.1",
 	"devDependencies": {
 		"@biomejs/biome": "2.2.5",
+		"@types/express": "^5.0.3",
 		"@types/js-yaml": "^4.0.9",
 		"@types/node": "^24.7.0",
 		"typescript": "^5.9.3"
 	},
 	"dependencies": {
+		"express": "^5.1.0",
 		"js-yaml": "^4.1.0",
 		"zod": "^4.1.12"
 	}
