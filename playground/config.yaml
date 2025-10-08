@@ -1,0 +1,9 @@
+server:
+  port: 3001
+database:
+  url: 'postgresql://neondb_owner:npg_2WZOEt4nbhRY@ep-dry-term-agihpqnz-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+  username: 'mzelinka'
+  password: 'eiasd4ad8q$'
+featureFlags:
+  v2logger: true
+  v2admin: false
