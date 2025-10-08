@@ -11,7 +11,7 @@ describe("UserSchema", () => {
 		assert.throws(() => UserSchema.parse({ name: "Charles" }));
 	});
 
-	it("should fail when age is negative (< 0)", () => {
+	it("should fail when age is negative", () => {
 		assert.throws(() => UserSchema.parse({ name: "Boddy Tables", age: -1 }));
 	});
 });

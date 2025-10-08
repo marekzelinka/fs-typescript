@@ -14,7 +14,7 @@ describe("UserSchema", () => {
 		assert.doesNotThrow(() => UserSchema.parse({ name: "Ada", age: 36 }));
 	});
 
-	it("should fail when name and/or age is missing", () => {
+	it("should fail when name/age is missing", () => {
 		assert.throws(() => UserSchema.parse({}));
 	});
 });

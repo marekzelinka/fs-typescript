@@ -33,7 +33,7 @@ describe("UserProfileSchema", () => {
 });
 
 describe("ProfileUpdateSchema", () => {
-	it("should pass parsing valid data", () => {
+	it("should pass with valid data", () => {
 		assert.doesNotThrow(() =>
 			ProfileUpdateSchema.parse({
 				name: "Ada Lovelace",
@@ -44,7 +44,7 @@ describe("ProfileUpdateSchema", () => {
 		);
 	});
 
-	it("should omit id property after parsing", () => {
+	it("should pass and the result should omit id", () => {
 		const result = ProfileUpdateSchema.parse({
 			name: "Ada Lovelace",
 			email: "ada@frontendmasters.com",
@@ -57,7 +57,7 @@ describe("ProfileUpdateSchema", () => {
 });
 
 describe("PublicProfileSchema", () => {
-	it("should pass parsing valid data", () => {
+	it("should pass with valid data", () => {
 		assert.doesNotThrow(() =>
 			PublicProfileSchema.parse({
 				name: "Ada Lovelace",
@@ -66,7 +66,7 @@ describe("PublicProfileSchema", () => {
 		);
 	});
 
-	it("should omit id property after parsing", () => {
+	it("should pass and the result should omit id", () => {
 		const result = PublicProfileSchema.parse({
 			name: "Ada Lovelace",
 			addresses: [{ street: "1900 Sea St", zipCode: "12345" }],

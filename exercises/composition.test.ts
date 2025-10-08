@@ -15,7 +15,7 @@ describe("RegisterFormSchema", () => {
 		);
 	});
 
-	it("should pass with a valid/missing form values", () => {
+	it("should fail with invalid/missing form values", () => {
 		const formData = new FormData();
 		formData.append("email", "marekzelinka_frontendmasters.com");
 		formData.append("password", "123");
@@ -36,7 +36,7 @@ describe("LoginFormSchema", () => {
 		);
 	});
 
-	it("should pass with a valid/missing form values", () => {
+	it("should fail with invalid/missing form values", () => {
 		const formData = new FormData();
 		formData.append("email", "marekzelinka_frontendmasters.com");
 		formData.append("password", "123");
