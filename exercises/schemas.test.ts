@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import * as z from "zod";
 import { UserSchema } from "./schemas.ts";
 
 describe("UserSchema", () => {
@@ -8,10 +9,13 @@ describe("UserSchema", () => {
 	});
 
 	it("should fail when age is missing", () => {
-		assert.throws(() => UserSchema.parse({ name: "Charles" }));
+		assert.throws(() => UserSchema.parse({ name: "Charles" }), z.ZodError);
 	});
 
 	it("should fail when age is negative", () => {
-		assert.throws(() => UserSchema.parse({ name: "Boddy Tables", age: -1 }));
+		assert.throws(
+			() => UserSchema.parse({ name: "Boddy Tables", age: -1 }),
+			z.ZodError,
+		);
 	});
 });

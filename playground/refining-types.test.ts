@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import * as z from "zod";
 import { DateStringSchema } from "./refining-types.ts";
 
 describe("DateStringSchema", () => {
@@ -8,6 +9,6 @@ describe("DateStringSchema", () => {
 	});
 
 	it("should throw on invalid date", () => {
-		assert.throws(() => DateStringSchema.parse("Feb 30th, 2025"));
+		assert.throws(() => DateStringSchema.parse("Feb 30th, 2025"), z.ZodError);
 	});
 });

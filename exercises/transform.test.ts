@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import * as z from "zod";
 import { DateStringSchema } from "./transform.ts";
 
 describe("DateString", () => {
@@ -16,6 +17,6 @@ describe("DateString", () => {
 	});
 
 	it("should fail if the string is not a date", () => {
-		assert.throws(() => DateStringSchema.parse("Dec 10th, 2025"));
+		assert.throws(() => DateStringSchema.parse("Dec 10th, 2025"), z.ZodError);
 	});
 });

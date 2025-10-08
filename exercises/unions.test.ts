@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import * as z from "zod";
 import { UnionDataSchema } from "./unions.ts";
 
 describe("Schema", () => {
@@ -12,6 +13,9 @@ describe("Schema", () => {
 	});
 
 	it("should fail when data object is invalid", () => {
-		assert.throws(() => UnionDataSchema.parse({ id: "wrong", name: "Marvin" }));
+		assert.throws(
+			() => UnionDataSchema.parse({ id: "wrong", name: "Marvin" }),
+			z.ZodError,
+		);
 	});
 });

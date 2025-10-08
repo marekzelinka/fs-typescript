@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import * as z from "zod";
 import { QuantityScehma } from "./refine.ts";
 
 describe("QuantityScehma", () => {
@@ -8,6 +9,6 @@ describe("QuantityScehma", () => {
 	});
 
 	it("should fail with a non-prime number", () => {
-		assert.throws(() => QuantityScehma.parse(6));
+		assert.throws(() => QuantityScehma.parse(6), z.ZodError);
 	});
 });

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import * as z from "zod";
 import {
 	ProfileUpdateSchema,
 	PublicProfileSchema,
@@ -20,14 +21,16 @@ describe("UserProfileSchema", () => {
 	});
 
 	it("should fail with invalid data", () => {
-		assert.throws(() =>
-			UserProfileSchema.parse({
-				id: 1,
-				name: "   ",
-				email: "adafrontendmasters.com",
-				addresses: "1900 Sea St, 12345",
-				phoneNumber: { country: "us", value: "213-373-4253" },
-			}),
+		assert.throws(
+			() =>
+				UserProfileSchema.parse({
+					id: 1,
+					name: "   ",
+					email: "adafrontendmasters.com",
+					addresses: "1900 Sea St, 12345",
+					phoneNumber: { country: "us", value: "213-373-4253" },
+				}),
+			z.ZodError,
 		);
 	});
 });

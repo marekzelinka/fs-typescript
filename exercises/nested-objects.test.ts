@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
+import * as z from "zod";
 import { UserProfileSchema } from "./nested-objects.ts";
 
 describe("UserProfileSchema", () => {
@@ -27,11 +28,13 @@ describe("UserProfileSchema", () => {
 	});
 
 	it("should fail with no addresses", () => {
-		assert.throws(() =>
-			UserProfileSchema.parse({
-				name: "Ada",
-				addresses: [],
-			}),
+		assert.throws(
+			() =>
+				UserProfileSchema.parse({
+					name: "Ada",
+					addresses: [],
+				}),
+			z.ZodError,
 		);
 	});
 });
